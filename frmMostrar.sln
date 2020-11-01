@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frmMostrar", "frmMostrar\frmMostrar.csproj", "{F88C02AB-6CD8-4882-9D28-A1E7FC4B0934}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F88C02AB-6CD8-4882-9D28-A1E7FC4B0934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F88C02AB-6CD8-4882-9D28-A1E7FC4B0934}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F88C02AB-6CD8-4882-9D28-A1E7FC4B0934}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F88C02AB-6CD8-4882-9D28-A1E7FC4B0934}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB965B75-1946-4E39-8AFF-EDE3853F02AC}
+	EndGlobalSection
+EndGlobal
