@@ -22,7 +22,7 @@ namespace StockTrail
 
         private void ShowNewForm(object sender, EventArgs e)
         {
-            frmAltaProducto childForm = new frmAltaProducto();
+            FrmAltaProducto childForm = new FrmAltaProducto();
             childForm.MdiParent = this;
             childForm.Text = "Ventana " + childFormNumber++;
             childForm.Show();
@@ -30,31 +30,19 @@ namespace StockTrail
 
         private void OpenFile(object sender, EventArgs e)
         {
-            Form1 childForm = new Form1();
-            childForm.MdiParent = this;
-            childForm.Text = "Ventana " + childFormNumber++;
-            childForm.Show();
-        }
 
+        }
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            saveFileDialog.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*";
-            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = saveFileDialog.FileName;
-            }
         }
 
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
         }
 
         private void CutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmConsultarVentas childForm = new frmConsultarVentas();
+            FrmConsultarVentas childForm = new FrmConsultarVentas();
             childForm.MdiParent = this;
             childForm.Text = "Ventana " + childFormNumber++;
             childForm.Show();
@@ -136,18 +124,77 @@ namespace StockTrail
 
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmVencimiento childForm = new FrmVencimiento();
-            childForm.MdiParent = this;
-            childForm.Text = "Ventana " + childFormNumber++;
-            childForm.Show();
+
         }
 
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void vERSTOCKToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmStock childForm = new FrmStock();
+            childForm.MdiParent = this;
+            childForm.Text = "STOCK";
+            childForm.Show();
+        }
+
+        private void nUEVOPRODUCTOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void pRODUCTOSVENCIDOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVencimiento childForm = new FrmVencimiento();
+            childForm.MdiParent = this;
+            childForm.Text = "PRODUCTOS VENCIDOS";
+            childForm.Show();
+        }
+
+        private void rEALIZARVENTAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             FrmVentas childForm = new FrmVentas();
             childForm.MdiParent = this;
-            childForm.Text = "Ventana " + childFormNumber++;
+            childForm.Text = "REALIZAR VENTAS";
             childForm.Show();
+        }
+
+        private void cONSULTARVENTAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultarVentas childForm = new FrmConsultarVentas();
+            childForm.MdiParent = this;
+            childForm.Text = "CONSULTAR VENTAS";
+            childForm.Show();
+        }
+
+        private void cARGARNUEVOPRODUCTOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAltaProducto childForm = new FrmAltaProducto();
+            childForm.MdiParent = this;
+            childForm.Text = "NUEVO PRODUCTO";
+            childForm.Show();
+        }
+
+        private void mODIFICARPRODUCTOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmModificar childForm = new FrmModificar();
+            childForm.MdiParent = this;
+            childForm.Text = "MODIFICAR PRODUCTO";
+            childForm.Show();
+        }
+
+        private void eLIMINARPRODUCTOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEliminar childForm = new FrmEliminar();
+            childForm.MdiParent = this;
+            childForm.Text = "ELIMINAR PRODUCTO";
+            childForm.Show();
+        }
+
+        private void pruebaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -12,17 +12,15 @@ using MySql.Data.MySqlClient;
 
 namespace StockTrail
 {
-    public partial class frmAltaProducto : Form
+    public partial class FrmAltaProducto : Form
     {
         static string connectionstring = "datasource=127.0.0.1;port=3306;username=root;password=;database=farmacia;";
-        static string query = "SELECT * FROM prodfar";
-        public frmAltaProducto()
+        public FrmAltaProducto()
         {
             InitializeComponent();
         }
         private void Guardar()
         {
-             
             string nombre = "'" + txtNombre.Text + "'";            
             int cantidad = Convert.ToInt32(txtCantidad.Text);
             DateTime Fecha = Convert.ToDateTime(txtFecha.Text);
@@ -32,7 +30,6 @@ namespace StockTrail
             string sql = "INSERT INTO prodfar (Nombre,Cantidad,Importe,Fecha,Proveedor,Vencimiento)";
             sql = sql + "VALUES (" + nombre;
             sql = sql + "," + cantidad.ToString();
-            //sql = sql + "," + "'" + Fecha.ToShortDateString() + "'";
             sql = sql + "," + "'" + txtPrecioU.Text + "'";
             sql = sql + "," + "'" + fechaYMD + "'";
             sql = sql + "," + proveedor;
@@ -40,7 +37,7 @@ namespace StockTrail
             sql = sql + ")";
 
             MySqlConnection databaseConnection = new MySqlConnection(connectionstring);
-            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            MySqlCommand commandDatabase = new MySqlCommand(sql, databaseConnection);
             commandDatabase.CommandTimeout = 60;
             try
             {
@@ -49,9 +46,12 @@ namespace StockTrail
                 commandDatabase.Connection = databaseConnection;
                 commandDatabase.ExecuteNonQuery();
                 databaseConnection.Close();
-                MessageBox.Show("DATO GUARDADO CORRECTAMENTE");
+                MessageBox.Show("DATO ACTUALIZADO CORRECTAMENTE");
                 txtNombre.Text = "";
                 txtCantidad.Text = "";
+                txtProveedor.Text = "";
+                txtPrecioU.Text = "";
+                txtVenc.Text = "";
             }
             catch (Exception error)
             {

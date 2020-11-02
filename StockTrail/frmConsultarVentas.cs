@@ -11,10 +11,10 @@ using MySql.Data.MySqlClient;
 
 namespace StockTrail
 {
-    public partial class frmConsultarVentas : Form
+    public partial class FrmConsultarVentas : Form
     {
 
-        public frmConsultarVentas()
+        public FrmConsultarVentas()
         {
             InitializeComponent();
         }
