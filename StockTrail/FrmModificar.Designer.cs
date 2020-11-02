@@ -43,6 +43,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +70,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.PeachPuff;
+            this.panel2.Controls.Add(this.btnBuscar);
             this.panel2.Controls.Add(this.btnModificar);
             this.panel2.Controls.Add(this.txtIdProd);
             this.panel2.Controls.Add(this.label6);
@@ -101,9 +103,9 @@
             // 
             // txtIdProd
             // 
-            this.txtIdProd.Location = new System.Drawing.Point(292, 70);
+            this.txtIdProd.Location = new System.Drawing.Point(289, 70);
             this.txtIdProd.Name = "txtIdProd";
-            this.txtIdProd.Size = new System.Drawing.Size(147, 22);
+            this.txtIdProd.Size = new System.Drawing.Size(51, 22);
             this.txtIdProd.TabIndex = 9;
             // 
             // label6
@@ -184,6 +186,19 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "NOMBRE";
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.SandyBrown;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(346, 64);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(93, 35);
+            this.btnBuscar.TabIndex = 11;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // FrmModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -222,5 +237,6 @@
         private System.Windows.Forms.TextBox txtPrecioUnitario;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

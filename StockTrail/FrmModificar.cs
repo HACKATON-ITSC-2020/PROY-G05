@@ -54,6 +54,33 @@ namespace StockTrail
                 MessageBox.Show(error.ToString());
             }
         }
-        
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtIdProd.Text == "")
+            {
+                MessageBox.Show("DEBE INGRESAR UN CODIGO");
+                return; 
+            }
+            string connectionstring = "datasource=127.0.0.1;port=3306;username=root;password=;database=farmacia;";
+            string sql = "SELECT * FROM prodfar WHERE Producto ="+txtIdProd.Text;
+            MySqlConnection databaseConnection = new MySqlConnection(connectionstring);
+            MySqlCommand commandDatabase = new MySqlCommand(sql, databaseConnection);
+            commandDatabase.CommandText = sql;
+            commandDatabase.Connection = databaseConnection;
+            MySqlDataAdapter Da = new MySqlDataAdapter();
+            Da.SelectCommand = commandDatabase;
+            DataSet ds = new DataSet();
+            Da.Fill(ds);
+            DataTable tb = ds.Tables[0];
+            if (tb.Rows.Count > 0)
+            {
+                txtIdProd.Text = tb.Rows[0]["Producto"].ToString();
+                txtNombre.Text = tb.Rows[0]["Nombre"].ToString();
+                txtCantidad.Text = tb.Rows[0]["Cantidad"].ToString();
+                txtPrecioUnitario.Text = tb.Rows[0]["Importe"].ToString();
+                txtProveedor.Text = tb.Rows[0]["Proveedor"].ToString();
+            }
+        }
     }
 }
